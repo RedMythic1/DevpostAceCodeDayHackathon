@@ -1,5 +1,5 @@
 {"prompt": "Is: 'Paris', the correct answer to: 'What is the capital of France?'", "completion": "Correct! Paris is the capital of France"
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
+{"prompt": "Is: '2', the correct answer to: 'x = |-2| '", "completion": "Right on! |-2| is equal to 2."}
 {"prompt": "<prompt text>", "completion": "<ideal generated text>"}
 {"prompt": "<prompt text>", "completion": "<ideal generated text>"}
 {"prompt": "<prompt text>", "completion": "<ideal generated text>"}
