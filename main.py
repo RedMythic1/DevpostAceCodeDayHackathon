@@ -13,7 +13,7 @@ all_chars = string.ascii_letters + string.digits + string.punctuation
 
 openai.api_key = api1+api2+api3+api4
 
-"""
+
 type_of_question = input("What do you want your questions to be about (e.g. Geography, Science, English, History)?\n")
 quantity = 10
 x=0
@@ -88,14 +88,14 @@ print(answer9['choices'][0]['text'].replace('\n',''))
 x+=1
 answer10 = answer(input10, questions[x])
 print(answer10['choices'][0]['text'].replace('\n',''))
-"""
+
 
 import flask_socketio
-'''
+
 from db import Database
 
 users = Database('users/')
-'''
+
 app = flask.Flask(__name__, template_folder='./templates', static_folder='./static')
 app.config['SECRET_KEY'] = 'qwegxuqwgebn8uyiqwgaHEIUSQWEBGSARDN7Y3WQUSHNG4BIEODYCNCHWEIDASTYRUDIJHnmG&YUSgb76yUFV^TYU&wsipjedwqoimhjmnuitg77YUbgNUYgbnygNUgINUgBNYuigbbnuiybBGNyGHN(I*UNhB*BGHUIGVUNHNIUG   BYTUIBIIIUbhjgbiuBHIU)'
 sio = flask_socketio.SocketIO(app)
@@ -124,8 +124,10 @@ def vs():
         max_tokens=100,
         temperature=.7
     )
-     return flask.render_template('Vs.html', user=users[flask.session['user']], question=question)
-
+     return fask.render_template('Vs.html', user=users[flask.session['user']], question=question)
+#@sio.on("timeout")
+#def timeout():
+    
 
 
 if __name__ == '__main__':

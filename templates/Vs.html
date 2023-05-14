@@ -11,9 +11,13 @@
         <div class="questioncontainer">
             question: {{  }}
         </div>
-        <div class="timer">
+        <div class="timer" id="timer">
             
         </div>
+        <form name="answer" id="form">
+            Answer <input type="text" name="fname" id="input">
+
+            </form>
         <div class="floatcontainer">
         
             
@@ -98,10 +102,22 @@
 
     </style>
     <script>
-        function play() {
-  var audio = new Audio(Lobby1.wav);
-  audio.play();
-  audio.loop = true;
-}
+var timeLeft = 30;
+    var elem = document.getElementById('timer');
+    var socket = io();
+    var timerId = setInterval(countdown, 1000);
+    
+    function countdown() {
+      if (timeLeft == -1) {
+        clearInterval(timerId);
+        let answer = document.forms["answer"]["fname"].value;
+    socket.on('connect', function() {
+        socket.emit('timeout', {answer:answer});
+    });
+      } else {
+        elem.innerHTML = timeLeft + ' seconds remaining';
+        timeLeft--;
+      }
+    }
     </script>
 </html>
