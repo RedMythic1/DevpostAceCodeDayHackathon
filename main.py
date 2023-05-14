@@ -93,11 +93,20 @@ from db import Database
 users = Database('users/')
 '''
 app = flask.Flask(__name__, template_folder='./templates', static_folder='./static')
-sio = flask_socketio.SocketIO()
+app.config['SECRET_KEY'] = 'qwegxuqwgebn8uyiqwgaHEIUSQWEBGSARDN7Y3WQUSHNG4BIEODYCNCHWEIDASTYRUDIJHnmG&YUSgb76yUFV^TYU&wsipjedwqoimhjmnuitg77YUbgNUYgbnygNUgINUgBNYuigbbnuiybBGNyGHN(I*UNhB*BGHUIGVUNHNIUG   BYTUIBIIIUbhjgbiuBHIU)'
+sio = flask_socketio.SocketIO(app)
 
 @app.route('/')
 def index():
     return flask.render_template('index.html')
+
+@sio.on('my event')
+def handle_my_custom_event(json):
+    print('received json: ' + str(json))
+
+@app.route('/play', methods=['GET', 'POST'])
+def play():
+    return flask.render_template('searching.html')
 
 @app.route("/vs")
 def vs():
@@ -126,4 +135,5 @@ def signup():
 
 
 
-app.run('0.0.0.0', 80)
+if __name__ == '__main__':
+    sio.run(app)
