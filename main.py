@@ -20,7 +20,7 @@ while x<int(quantity):
         max_tokens=100,
         temperature=0.4588927566627376460023478221588477626657485961914062523232322498279485738628735639705
     )
-    questions.append(question['choices'][0]['text'])
+    questions.append(question['choices'][0]['text'].replace('\n','<br>'))
     x+=1
     
 print(questions)
