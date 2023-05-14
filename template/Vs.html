@@ -11,8 +11,8 @@
         <div class="questioncontainer">
             question: {{ question }}
         </div>
-        <div class"timer">
-            n
+        <div class="timer">
+            timer
         </div>
         <div class="floatcontainer">
         
@@ -36,6 +36,17 @@
 
     </body>
     <style>
+    .timer{
+      width:90%;
+      margin:auto;
+      margin-top:30px;
+                  border-radius: 5px;
+            border-width: 5px;
+            border-color: rgb(255, 0, 0);
+            border-style:solid;
+            font-size:70px;
+            text-align:center;
+    }
         img{
             display:inline-block;
         }
@@ -88,7 +99,7 @@
     </style>
     <script>
         function play() {
-  var audio = new Audio("Lobby.wav");
+  var audio = new Audio(Lobby1.wav);
   audio.play();
   audio.loop = true;
 }
