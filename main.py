@@ -9,7 +9,7 @@ api4 = "fctEUhj7dH4ryjYVX"
 
 openai.api_key = api1+api2+api3+api4
 
-type_of_question = input("What do you want your questions to be about (e.g. Geometry, Geography, Math, Science, English)?\n")
+type_of_question = input("What do you want your questions to be about (e.g. Geography, Science, English)?\n")
 quantity = 10
 x=0
 questions = []
