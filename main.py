@@ -91,7 +91,7 @@ from db import Database
 
 users = Database('users/')
 
-app = flask.Flask(__name__, template_folder='/template')
+app = flask.Flask(__name__, template_folder='./templates', static_folder='./static')
 sio = flask_socketio.SocketIO()
 
 @app.route('/')
