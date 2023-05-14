@@ -9,6 +9,7 @@ api4 = "fctEUhj7dH4ryjYVX"
 
 openai.api_key = api1+api2+api3+api4
 
+"""
 type_of_question = input("What do you want your questions to be about (e.g. Geography, Science, English, History)?\n")
 quantity = 10
 x=0
@@ -83,11 +84,12 @@ print(answer9['choices'][0]['text'].replace('\n',''))
 x+=1
 answer10 = answer(input10, questions[x])
 print(answer10['choices'][0]['text'].replace('\n',''))
+"""
 
 import flask_socketio
 from db import Database
 
-users = Database
+users = Database('users/')
 
 app = flask.Flask(__name__, template_folder='/template')
 sio = flask_socketio.SocketIO()
@@ -98,7 +100,13 @@ def index():
 
 @app.route("/vs")
 def vs():
-     return flask.render_template('Vs.html')
+     question = openai.Completion.create(
+        model='text-davinci-003',
+        prompt=f'Make a test question about {type_of_question}',
+        max_tokens=100,
+        temperature=.7
+    )
+     return flask.render_template('Vs.html', user=users[flask.session['user']], question=question)
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
