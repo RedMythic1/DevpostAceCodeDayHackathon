@@ -1,16 +1,16 @@
 import openai
+import flask
 
 api1 = "sk-"
 api2 ="tsozY7yFhMibo1"
 api3 = "vlfYodT3BlbkFJkMz"
 api4 = "fctEUhj7dH4ryjYVX"
 
-print("hi")
 
 openai.api_key = api1+api2+api3+api4
 
 type_of_question = input("What do you want your questions to be about (e.g. Geometry, Geography, Math, Science, English)?\n")
-quantity = input("How many questions do you want\n")
+quantity = 15
 x=0
 questions = []
 while x<int(quantity):
