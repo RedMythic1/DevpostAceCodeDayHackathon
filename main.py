@@ -13,7 +13,7 @@ type_of_question = input("What do you want your questions to be about (e.g. Geom
 quantity = input("How many questions do you want\n")
 x=0
 questions = []
-while x<quantity:
+while x<int(quantity):
     question = openai.Completion.create(
         model='text-davinci-003',
         prompt=f'Make a test question about {type_of_question}',
