@@ -1,11 +1,15 @@
 import openai
 import flask
+import json
+import string
+import random
 
 api1 = "sk-"
 api2 ="tsozY7yFhMibo1"
 api3 = "vlfYodT3BlbkFJkMz"
 api4 = "fctEUhj7dH4ryjYVX"
 
+all_chars = string.ascii_letters + string.digits + string.punctuation
 
 openai.api_key = api1+api2+api3+api4
 
@@ -101,8 +105,12 @@ def index():
     return flask.render_template('index.html')
 
 @sio.on('my event')
-def handle_my_custom_event(json):
-    print('received json: ' + str(json))
+def handle_my_custom_event(jsondict):
+    print('received json: ' + str(jsondict))
+    diction = json.loads(jsondict)
+    user_name = ''.join(random.choices(all_chars, k=10))
+    
+
 
 @app.route('/play', methods=['GET', 'POST'])
 def play():
@@ -117,21 +125,6 @@ def vs():
         temperature=.7
     )
      return flask.render_template('Vs.html', user=users[flask.session['user']], question=question)
-
-@app.route('/signup', methods=['GET', 'POST'])
-def signup():
-    if flask.request.method == 'GET':
-        return flask.render_template('signup.html')
-    username = flask.request.form['email']
-    password = hex(hash(flask.request.form['password'])).lstrip('0x')
-    users[username] = {
-        'password': password,
-        'rating': 0,
-        'pfp': 'http://placekitten.com/g/80/80', 
-        'status': 'waiting'
-    }
-    flask.session['user'] = username
-    return flask.redirect('/')
 
 
 
