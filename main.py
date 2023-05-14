@@ -53,7 +53,36 @@ x+=1
 input9 = input(f'{questions[x]}')
 x+=1
 input10 = input(f'{questions[x]}')
-
+x=0
+answer1 = answer(input1, questions[x])
+print(answer1['choices'][0]['text'].replace('\n',''))
+x+=1
+answer2 = answer(input2, questions[x])
+print(answer2['choices'][0]['text'].replace('\n',''))
+x+=1
+answer3 = answer(input3, questions[x])
+print(answer3['choices'][0]['text'].replace('\n',''))
+x+=1
+answer4 = answer(input4, questions[x])
+print(answer4['choices'][0]['text'].replace('\n',''))
+x+=1
+answer5 = answer(input5, questions[x])
+print(answer5['choices'][0]['text'].replace('\n',''))
+x+=1
+answer6 = answer(input6, questions[x])
+print(answer6['choices'][0]['text'].replace('\n',''))
+x+=1
+answer7 = answer(input7, questions[x])
+print(answer7['choices'][0]['text'].replace('\n',''))
+x+=1
+answer8 = answer(input8, questions[x])
+print(answer8['choices'][0]['text'].replace('\n',''))
+x+=1
+answer9 = answer(input9, questions[x])
+print(answer9['choices'][0]['text'].replace('\n',''))
+x+=1
+answer10 = answer(input10, questions[x])
+print(answer10['choices'][0]['text'].replace('\n',''))
 
     
     
