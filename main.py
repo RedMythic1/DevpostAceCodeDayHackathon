@@ -9,4 +9,4 @@ print("hi")
 
 openai.api_key = api1+api2+api3+api4
 
-openai.FineTune.create(training_file="file-IlRHoO5W8RG7MDudmuVNfd0Z")
+type = 
