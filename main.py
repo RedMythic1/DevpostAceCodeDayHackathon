@@ -87,10 +87,11 @@ print(answer10['choices'][0]['text'].replace('\n',''))
 """
 
 import flask_socketio
+'''
 from db import Database
 
 users = Database('users/')
-
+'''
 app = flask.Flask(__name__, template_folder='./templates', static_folder='./static')
 sio = flask_socketio.SocketIO()
 
@@ -117,7 +118,7 @@ def signup():
     users[username] = {
         'password': password,
         'rating': 0,
-        'pfp': 'http://placekitten.com/g/80/80',
+        'pfp': 'http://placekitten.com/g/80/80', 
         'status': 'waiting'
     }
     flask.session['user'] = username
