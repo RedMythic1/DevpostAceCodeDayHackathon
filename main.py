@@ -10,7 +10,7 @@ api4 = "fctEUhj7dH4ryjYVX"
 openai.api_key = api1+api2+api3+api4
 
 type_of_question = input("What do you want your questions to be about (e.g. Geometry, Geography, Math, Science, English)?\n")
-quantity = 10 mhm big balls
+quantity = 10
 x=0
 questions = []
 while x<int(quantity):
@@ -26,5 +26,11 @@ while x<int(quantity):
 print(questions)
     
     
-app = flask.Flask(__name__)
+app = flask.Flask(__name__, template_folder='.')
+
+@app.route('/')
+def index():
+    return flask.render_template('index.html')
+
+
 
