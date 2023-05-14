@@ -1,50 +1,16 @@
-{"prompt": "Is: 'Paris', the correct answer to: 'What is the capital of France?'", "completion": "Correct! Paris is the capital of France"
-{"prompt": "Is: '2', the correct answer to: 'x = |-2| '", "completion": "Right on! |-2| is equal to 2."}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
-{"prompt": "<prompt text>", "completion": "<ideal generated text>"}
+{"prompt": "Is: 'Paris', the correct answer to: 'What is the capital of France?'", "completion": "Correct! Paris is the capital of France"}
+{"prompt": "Is: '2', the correct answer to: 'x = |-2|'", "completion": "Right on! |-2| is equal to 2."}
+{"prompt": "Is: 'sin', the correct answer to: 'What is Opposite over Hypotenuse?'", "completion": "Correct! Sin is the same as Opposite over Hypotenuse"}
+{"prompt": "Is: 'pi*r^2', the correct answer to: 'What is the formula for the area of a circle?'", "completion": "Yes! The formula for the area of a circle is pi*r^2 with are r are radius"}
+{"prompt": "Is: 'Germany', the correct answer to: 'Who's flag has black on top, red in the middle, and yellow at the bottom?'", "completion": "Correct! Germany has the afformentioned flag"}
+{"prompt": "Is: 'Elon Musk', the correct answer to: 'Who is the richest person?'", "completion": "Correct! Elon Musk is the richest man"}
+{"prompt": "Is: '16t^2+vt+h', the correct answer to: 'What is the correct formula for calculating the parabola of a thrown object'", "completion": "Yes! -16 is the gravity, v is the upward velocity of the object, and h is the starting height."}
+{"prompt": "Is: '2*pi*r', the correct answer to: 'What is the formula for the circumference of a circle'", "completion": "Right on! 2*pi*r is the right way to calculate the circumference of a circle"}
+{"prompt": "Is: 'Copenhagen', the correct answer to: 'What is the capital of France?'", "completion": "False! Copenhagen is not the capital of France"}
+{"prompt": "Is: '-2', the correct answer to: 'x = |-2|'", "completion": "False! |-2| is not equal to -2."}
+{"prompt": "Is: 'Cosine', the correct answer to: 'What is Opposite over Hypotenuse?'", "completion": "False! Cosine is not the same as Opposite over Hypotenuse"}
+{"prompt": "Is: '2*pi*r', the correct answer to: 'What is the formula for the area of a circle?'", "completion": "False! The formula for the area of a circle is not 2*pi*r"}
+{"prompt": "Is: 'Belgium', the correct answer to: 'Who's flag has black on top, red in the middle, and yellow at the bottom?'", "completion": "False! Belgium does not has the afformentioned flag"}
+{"prompt": "Is: 'Jeff Bezos', the correct answer to: 'Who is the richest person?'", "completion": "False! Jeff Bezos is not the richest man"}
+{"prompt": "Is: 'a(x-h)^2+k', the correct answer to: 'What is the correct formula for calculating the parabola of a thrown object'", "completion": "False! a(x-h)^2+k is not the formula for calculating the path of a thrown object"}
+{"prompt": "Is: 'pi*r^2', the correct answer to: 'What is the formula for the circumference of circle '", "completion": "False! That is not the right way to calculate the circumference of a circle"}
