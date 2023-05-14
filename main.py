@@ -28,31 +28,31 @@ while x<int(quantity):
         model='text-davinci-003',
         prompt=f'Make a test question about {type_of_question}',
         max_tokens=100,
-        temperature=0.45889275666273764600234782215884776266574859619140625232323224982794857386287356397041
+        temperature=0.25889275666273764600234782215884776266574859619140625232323224982794857386287356397001
     )
     questions.append(question['choices'][0]['text'].replace('\n',''))
     x+=1
     
 x=0
-input1 = input(f'{questions[x]}')
+input1 = input(f'{questions[x]}\n')
 x+=1
-input2 = input(f'{questions[x]}')
+input2 = input(f'{questions[x]}\n')
 x+=1
-input3 = input(f'{questions[x]}')
+input3 = input(f'{questions[x]}\n')
 x+=1
-input4 = input(f'{questions[x]}')
+input4 = input(f'{questions[x]}\n')
 x+=1
-input5 = input(f'{questions[x]}')
+input5 = input(f'{questions[x]}\n')
 x+=1 
-input6 = input(f'{questions[x]}')
+input6 = input(f'{questions[x]}\n')
 x+=1
-input7 = input(f'{questions[x]}')
+input7 = input(f'{questions[x]}\n')
 x+=1
-input8 = input(f'{questions[x]}')
+input8 = input(f'{questions[x]}\n')
 x+=1
-input9 = input(f'{questions[x]}')
+input9 = input(f'{questions[x]}\n')
 x+=1
-input10 = input(f'{questions[x]}')
+input10 = input(f'{questions[x]}\n')
 x=0
 answer1 = answer(input1, questions[x])
 print(answer1['choices'][0]['text'].replace('\n',''))
@@ -86,7 +86,7 @@ print(answer10['choices'][0]['text'].replace('\n',''))
 
     
     
-app = flask.Flask(__name__, template_folder='.')
+app = flask.Flask(__name__, template_folder='/template')
 
 @app.route('/')
 def index():
