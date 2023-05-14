@@ -84,8 +84,8 @@ x+=1
 answer10 = answer(input10, questions[x])
 print(answer10['choices'][0]['text'].replace('\n',''))
 
-    
-    
+import flask_socketio    
+
 app = flask.Flask(__name__, template_folder='/template')
 sio = flask_socketio.SocketIO
 
