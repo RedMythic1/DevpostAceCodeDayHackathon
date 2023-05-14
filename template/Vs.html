@@ -9,25 +9,39 @@
     </head>
     <body>
         <div class="questioncontainer">
-            question:(question var)
+            question: {{ question }}
         </div>
-        <div class="floatcontainer"
+        <div class="floatcontainer">
         <div class="player1">
+            <img>aaa</img>
+             
             player1
+            points
         </div>
         <div class="player2">
+            <img src="http://placekitten.com/g/10/10"></img>
             player2 
+            points
         </div>  
+    </div>
 
         
 
 
     </body>
     <style>
+        .floatcontainer {
+            position:absolute;
+            margin:10px;
+            width:90%;
+            bottom:5px;
+            padding:10px;
+            height:30%;
+        }
         .questioncontainer{
             border-radius: 5px;
             border-width: 5px;
-            border-color: rgb(255, 0, 0);
+            border-color: rgb(0, 255, 123);
             border-style:solid;
             width:90%;
             margin:auto;
@@ -35,6 +49,7 @@
             font-size:30px;
         }
         .player1{
+            float:left;
             border-radius: 5px;
             border-width: 5px;
             border-color: rgb(255, 0, 0);
@@ -43,12 +58,15 @@
             margin:auto;
             text-align: center;
             font-size:30px;
+            height:100%
         }
         .player2{
+            float:right;
             border-radius: 5px;
             border-width: 5px;
-            border-color: rgb(255, 0, 0);
+            border-color: rgb(64, 0, 255);
             border-style:solid;
+            height:100%;
             width:40%;
             margin:auto;
             text-align: center;
