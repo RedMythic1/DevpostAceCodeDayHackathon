@@ -19,7 +19,7 @@ def answer(input, question):
         model='text-davinci-003',
         prompt=f'Is {input} the correct answer for the question {question}',
         max_tokens=100,
-        temperature=0.1
+        temperature=0.05
     )
 	return answer
 
@@ -84,16 +84,22 @@ x+=1
 answer10 = answer(input10, questions[x])
 print(answer10['choices'][0]['text'].replace('\n',''))
 
-import flask_socketio    
+import flask_socketio
 
 app = flask.Flask(__name__, template_folder='/template')
-sio = flask_socketio.SocketIO
+sio = flask_socketio.SocketIO()
 
 @app.route('/')
 def index():
     return flask.render_template('index.html')
 
-
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if flask.request.method == 'GET':
+        return flask.render_template('signup.html')
+    email = flask.request.form['email']
+    password = hex(hash(flask.request.form['password'])).lstrip('0x')
+    users[]
 
 
 app.run('0.0.0.0', 80)
