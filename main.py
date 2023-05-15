@@ -158,6 +158,13 @@ def vs():
     ques = ques['choices'][0]['text'].replace('\n', '') #type: ignore
     return flask.render_template('Vs.html', acc=users[flask.session['user']], opp=users[opp], fq=ques, category=matches[flask.request.args['match']]['category'])
 
+@sio.on('answer')
+def handle_message(data):
+    print(data)
+
+@sio.on('name')
+def handle_message(data):
+    print(data)
 
 @sio.on('timeout')
 def timeout(data):
@@ -187,4 +194,4 @@ def timeout(data):
     })
 
 if __name__ == '__main__':
-    sio.run(app, debug=True)
+    sio.run(app, debug=True, host='0.0.0.0')
