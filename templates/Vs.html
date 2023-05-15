@@ -134,6 +134,7 @@
     function submit() {
         socket.on("connect", function () {
             socket.emit("answer", { answer: ans});
+            socket.emit()
           });
     }
   </script>
