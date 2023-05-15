@@ -4,47 +4,47 @@
         <meta charset=utf-8>
         <title>Lobby</title>
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+        <style>
+            body{
+                font-family:Ubuntu,sans-serif;
+
+            }
+            .title{
+                margin-bottom:20px;
+            }
+            .titlecontainer{
+                border-radius: 5px;
+                border-width: 5px;
+                border-color: rgb(0, 255, 89);
+                border-style:solid;
+                width:20%;
+                margin:auto;
+                text-align: center;
+            
+            }
+
+        </style>
     </head>
     <body>
         <div class="titlecontainer">
-<div class="title">
-    Word for the World
-    </div>
-    <div class="buttoncontainer">
-<a href="/play">PLAY</a>
-    </div>
-
+        <div class="title">
+            AI trivia
+        </div>
+        <div class="buttoncontainer">
+            <form action="/matchmaking">
+                <select name="category">
+                    <option value="geography">Geography</option>
+                    <option value="history">History</option>
+                    <option value="science">Science</option>
+                </select>
+                <input type="submit">
+            </form>
         </div>
 
-    </body>
-    <style>
-        body{
-            font-family:Ubuntu,sans-serif;
+    </div>
 
-        }
-        .title{
-            margin-bottom:20px;
-        }
-        .titlecontainer{
-            border-radius: 5px;
-            border-width: 5px;
-            border-color: rgb(0, 255, 89);
-            border-style:solid;
-            width:20%;
-            margin:auto;
-            text-align: center;
-            
-        }
 
-    </style>
-
-<script>
-    function play() {
-var audio = new Audio("Lobby1.wav");
-audio.play();
-audio.loop = true;
-}
-</script>
+</body>
 </html>

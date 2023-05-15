@@ -2,44 +2,11 @@
 <html>
     <head>
         <meta charset=utf-8>
-        <title>title</title>
+        <title>VS - {{ category }}</title>
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="questioncontainer">
-            question: {{  }}
-        </div>
-        <div class="timer" id="timer">
-            
-        </div>
-        <form name="answer" id="form">
-            Answer <input type="text" name="fname" id="input">
-
-            </form>
-        <div class="floatcontainer">
-        
-            
-        <div class="player1">
-            <img src="http://placekitten.com/g/80/80"></img>
-             <br>
-            player1
-            points
-        </div>
-        <div class="player2">
-            <img src="http://placekitten.com/g/80/80"></img>
-            <br>
-            player2 
-            points
-        </div>  
-    </div>
-
-        
-
-
-    </body>
-    <style>
+<style>
     .timer{
       width:90%;
       margin:auto;
@@ -101,8 +68,39 @@
         }
 
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="questioncontainer">
+            {{fq}}
+        </div>
+        <div class="timer" id="timer">
+            
+        </div>
+        <div id="form">
+            Answer <input type="text" name="input" id="input">
+            <a href="">Submit</a>
+
+            </div>
+        <div class="floatcontainer">
+        
+            
+        <div class="player1">
+            <img src="http://placekitten.com/g/80/80"></img>
+             <br>
+            {{acc['username']}}
+            Points:<span id="points_me">0</span>
+        </div>
+        <div class="player2">
+            <img src="http://placekitten.com/g/80/80"></img>
+            <br>
+            {{opp['username']}}
+            Points:<span id="points_opp">0</span>
+        </div>  
+    </div>
     <script>
-var timeLeft = 30;
+    question = "{{ fq }}"
+    var timeLeft = 30;
     var elem = document.getElementById('timer');
     var socket = io();
     var timerId = setInterval(countdown, 1000);
@@ -110,14 +108,34 @@ var timeLeft = 30;
     function countdown() {
       if (timeLeft == -1) {
         clearInterval(timerId);
-        let answer = document.forms["answer"]["fname"].value;
+        let answer = document.getElementById('input').value;
     socket.on('connect', function() {
-        socket.emit('timeout', {answer:answer});
+        socket.emit('timeout', {answer:answer,question:question, match: (new URLSearchParams(location.search)).get('match')});
     });
       } else {
         elem.innerHTML = timeLeft + ' seconds remaining';
+
+
         timeLeft--;
       }
+
+      
+
     }
     </script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+    integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+    crossorigin="anonymous"
+  ></script>
+  <script type="text/javascript" charset="utf-8">
+    var socket = io();
+    var ans = document.getElementById('input'.value)
+    function submit() {
+        socket.on("connect", function () {
+            socket.emit("answer", { answer: ans});
+          });
+    }
+  </script>
+    </body>
 </html>

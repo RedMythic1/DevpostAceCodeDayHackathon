@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <title>
+            Login
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    </body>
+</html<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <title>login</title>
+
+        <style>
+             body{
+            font-family:Ubuntu,sans-serif;
+
+        }
+        .login {
+  border-radius: 5px;
+  border-width: 5px;
+  border-color: rgb(0, 255, 123);
+  border-style: solid;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+        </style>
+    </head>
+    <body>
+        <div class="login">
+        <form action="/login" method="post">
+            <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+    
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    <div class="incorrect">
+    {% for message in get_flashed_messages() %}
+            {{ message }}
+    {% endfor %}
+    </div>
+
+    <button type="submit">Login</button>
+    <label>
+    </form>
+</div>
+    
+
+    </body>
+</html>

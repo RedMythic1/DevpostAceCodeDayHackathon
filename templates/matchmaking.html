@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Finding Match...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <style>
+      .loading {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        margin-top:auto;
+        margin-bottom: auto;
+
+      }
+      body{
+        background-color: rgb(46,45,51);
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://media.tenor.com/8yTZcA1_aGEAAAAC/amelia-watson-vtuber.gif"
+      alt="loading"
+      width="250"
+      class="loading"
+    />
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+    integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+    crossorigin="anonymous"
+  ></script>
+  <script type="text/javascript" charset="utf-8">
+    var socket = io();
+    socket.on("connect", function () {
+      socket.emit("find_match", { category: (new URLSearchParams(location.search)).get('category') });
+    });
+    socket.on('match_found', function (dt) {
+        window.location = `/vs?match=${dt.session}`
+    })
+    socket.on('match_fail', () => {
+        socket.disconnect()
+        socket.connect()
+    })
+  </script>
+</html>

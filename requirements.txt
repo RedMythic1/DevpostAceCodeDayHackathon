@@ -1,0 +1,4 @@
+flask
+flask-socketio
+openai
+git+https://github.com/chronosirius/nosql-db-client.git
