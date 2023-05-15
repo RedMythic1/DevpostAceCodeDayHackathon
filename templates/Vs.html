@@ -131,10 +131,11 @@
   <script type="text/javascript" charset="utf-8">
     var socket = io();
     var ans = document.getElementById('input'.value)
+    var user = {{acc['username']}}
     function submit() {
         socket.on("connect", function () {
             socket.emit("answer", { answer: ans});
-            socket.emit()
+            socket.emit("username", { username: user});
           });
     }
   </script>

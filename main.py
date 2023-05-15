@@ -143,19 +143,20 @@ def matchmaking():
 
 @app.route("/vs")
 def vs():
-     opp = matches[flask.request.args['match']]['vs'].split('|||||vs|||||')
-     for x in opp:
+    x = 0
+    opp = matches[flask.request.args['match']]['vs'].split('|||||vs|||||')
+    for x in opp:
         if flask.session['user'] != x:
             opp = x
-     print(opp)
-     ques = openai.Completion.create(
+    print(opp)
+    ques = openai.Completion.create(
          model='text-davinci-003',
          prompt='make a ' + get_adj(users[flask.session["user"]]['rating']) + 'question about ' + matches[flask.request.args['match']]['category'],
          max_tokens=200,
          temperature=1
      )
-     ques = ques['choices'][0]['text'].replace('\n', '') #type: ignore
-     return flask.render_template('Vs.html', acc=users[flask.session['user']], opp=users[opp], fq=ques, category=matches[flask.request.args['match']]['category'])
+    ques = ques['choices'][0]['text'].replace('\n', '') #type: ignore
+    return flask.render_template('Vs.html', acc=users[flask.session['user']], opp=users[opp], fq=ques, category=matches[flask.request.args['match']]['category'])
 
 
 @sio.on('timeout')
